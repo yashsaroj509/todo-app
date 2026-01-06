@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Toodle — Minimal Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Toodle</h1>
+      <p class="sub">A clean, minimal todo app — edit, add, delete, filter, persisted locally.</p>
+    </header>
+
+    <section class="input-section" aria-label="Add new task">
+      <form id="taskForm" class="task-form" autocomplete="off">
+        <label for="taskInput" class="visually-hidden">New task</label>
+        <input id="taskInput" name="task" type="text" placeholder="Add a new task and press Enter" />
+        <button type="submit" aria-label="Add task">Add</button>
+      </form>
+
+      <div class="controls" role="region" aria-label="Task controls">
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+          <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+        </div>
+        <button id="clearCompleted" class="clear-btn">Clear completed</button>
+      </div>
+    </section>
+
+    <section class="list-section" aria-label="Task list">
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      <div class="footer">
+        <span id="count" class="count">0 items left</span>
+        <small class="hint">Double-click a task to edit</small>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
